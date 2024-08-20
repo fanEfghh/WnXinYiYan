@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "mUoPSfiUUJWDGJOTotxp0jay2yvV8bU+FPYQ/7UsimdVbtwVlHj29fPy+pCeeRfukfcgvv7keaCsN2tmgTmffw==",
+  "success": true,
+  "projectFilePath": "D:\\Csharp\\Wen\\Wen\\Wen.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\shi\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\shi\\.nuget\\packages\\restsharp\\106.2.0\\restsharp.106.2.0.nupkg.sha512",
+    "C:\\Users\\shi\\.nuget\\packages\\system.valuetuple\\4.4.0\\system.valuetuple.4.4.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "包 \"RestSharp\" 106.2.0 具有已知的 高 严重性漏洞，https://github.com/advisories/GHSA-9pq7-rcxv-47vq",
+      "libraryId": "RestSharp",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
