@@ -13,8 +13,8 @@ namespace SampleApplication
     public class Sample
     {
 
-        const string API_KEY = "ZxHq326Msz0WYfrPX1zsS1R3";
-        const string SECRET_KEY = "d3wq5QXooxA2jstUt9mILeqCm06dMFQm";
+        const string API_KEY = "";
+        const string SECRET_KEY = "";
         static bool IsInitialize = true;
         static MessageManage message = new MessageManage();
        
@@ -57,7 +57,7 @@ namespace SampleApplication
         //初始化
         static void Initialize(RestRequest request,RestClient client)
         {
-            message.message = @"{ ""role"":""user"",""content"":""你是一个猫娘，是我的助手，请你说话的方式尽量萌一点""}";
+            message.message = @"{ ""role"":""user"",""content"":""初始消息""}";
             message.messages.Add(message.message);
             var body = $@"{{""messages"":[{message.message}],""temperature"":0.95,""top_p"":0.8,""penalty_score"":1,""disable_search"":false,""enable_citation"":false}}";
             
@@ -69,26 +69,7 @@ namespace SampleApplication
             IsInitialize = false;
             
         }
-        static void Getmessage()
-        {
-            var Reply = @"{ ""role"":""user"",""content"":""消息""},";
-            // 移除Reply末尾的逗号，如果它存在的话  
-            var trimmedReply = Reply.EndsWith(",") ? Reply.Substring(0, Reply.Length - 1) : Reply;
-
-            // 使用字符串插值来构建body  
-            var body = $@"{{""messages"":[{trimmedReply}],""temperature"":0.95,""top_p"":0.8,""penalty_score"":1,""disable_search"":false,""enable_citation"":false}}";
-
-            // 注意：如果Reply是数组中的多个元素之一，你需要稍微调整逻辑来适应  
-            // 例如，如果messages数组应该包含多个元素，你需要将它们组合成一个有效的JSON数组字符串  
-            // 假设你有一个额外的Reply2  
-            var Reply2 = @"{ ""role"":""user"",""content"":""另一条消息""},";
-            var allReplies = new List<string> { trimmedReply, Reply2.EndsWith(",") ? Reply2.Substring(0, Reply2.Length - 1) : Reply2 };
-            var messagesArray = string.Join(",", allReplies);
-
-            var fullBody = $@"{{""messages"":[{messagesArray}],""temperature"":0.95,""top_p"":0.8,""penalty_score"":1,""disable_search"":false,""enable_citation"":false}}";
-
-            Console.WriteLine(fullBody);
-        }
+        
 
         /**
         * 使用 AK，SK 生成鉴权签名（Access Token）
